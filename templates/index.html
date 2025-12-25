@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحميل فيديوهات</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .container { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: center; width: 90%; max-width: 400px; }
+        h1 { font-size: 22px; color: #333; }
+        input { width: 100%; padding: 12px; margin: 20px 0; border: 2px solid #ddd; border-radius: 10px; box-sizing: border-box; text-align: center; }
+        button { background-color: #007bff; color: white; border: none; padding: 12px 30px; border-radius: 10px; cursor: pointer; width: 100%; font-size: 18px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>تحميل فيديوهات التواصل</h1>
+        <form action="/download" method="POST">
+            <input type="text" name="video_url" placeholder="ضع رابط الفيديو هنا" required>
+            <button type="submit" id="btn">تحميل الآن</button>
+        </form>
+    </div>
+    <script>
+        document.querySelector('form').onsubmit = () => {
+            document.getElementById('btn').innerText = "جاري المعالجة... انتظر";
+            document.getElementById('btn').style.backgroundColor = "#6c757d";
+        };
+    </script>
+</body>
+</html>
